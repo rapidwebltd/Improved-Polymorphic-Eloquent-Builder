@@ -1,0 +1,17 @@
+{
+    "name": "rapidwebltd/improved-polymorphic-eloquent-builder",
+    "type": "library",
+    "description": "Improved Polymorphic Eloquent Builder",
+    "keywords": ["eloquent", "polymorphic", "polymorphism", "Laravel", "Laravel Eloquent"],
+    "homepage": "https://github.com/rapidwebltd/Improved-Polymorphic-Eloquent-Builder",
+    "license": "LGPL3",
+    "require": {
+        "php": ">=5.5.9",
+        "laravel/framework": "5.1.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "RapidWeb\\ImprovedPolymorphicEloquentBuilder\\": "src/"
+        }
+    }
+}
