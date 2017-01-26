@@ -1,7 +1,13 @@
 # Improved Polymorphic Eloquent Builder
 
 Attempting to use `whereHas` queries with standard Eloquent polymorphic relationships will fail, due to Eloquent being unable
-to determine the correct model to retrieve.
+to determine the correct model to retrieve. You may receive an error similar to the one below as Eloquent tries to build the 
+query using columns from the model without including its table name.
+
+```
+QueryException in Connection.php line 662:
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'column_name' in 'where clause'
+```
 
 The 'Improved Polymorphic Eloquent Builder' is a class which extends the Eloquent Builder class that is built in to Laravel 5.1. 
 It enables limited use of the `whereHas` method to query Eloquent polymorphic relationships.
