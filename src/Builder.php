@@ -5,6 +5,7 @@ namespace RapidWeb\ImprovedPolymorphicEloquentBuilder;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Database\Eloquent\Builder as OriginalBuilder;
 use Closure;
+use Exception;
 
 class Builder extends OriginalBuilder
 {
@@ -23,8 +24,17 @@ class Builder extends OriginalBuilder
  			$relation = $this->getModel()->$relation();
  
  			if (get_class($relation) === 'Illuminate\Database\Eloquent\Relations\MorphTo') {
+
+                if (!$morphType) {
+                    throw new Exception('No morph type(s) specified in `whereHas` method call.');
+                }
  
  				$lookAhead = $relation->getParent()->where($name . '_type', '=', $morphType)->first();
+
+                if (!$lookAhead) {
+                    throw new Exception('Invalid morph type ('.$morphType.') specified in `whereHas` method call.');
+                }
+
  				$relation = $lookAhead->{$name}();
  
  				$relation = $relation->where($relation->getParent()->getTable() . '.' . $relation->getMorphType(), '=', $morphType);
