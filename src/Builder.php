@@ -4,6 +4,7 @@ namespace RapidWeb\ImprovedPolymorphicEloquentBuilder;
 
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Database\Eloquent\Builder as OriginalBuilder;
+use Closure;
 
 class Builder extends OriginalBuilder
 {
