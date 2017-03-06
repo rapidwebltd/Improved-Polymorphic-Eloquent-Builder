@@ -108,6 +108,7 @@ class Builder extends OriginalBuilder
      * @param  string  $relation
      * @param  string  $boolean
      * @param  \Closure|null  $callback
+     * @param  array   $morphTypes
      * @return \Illuminate\Database\Eloquent\Builder|static
      */
     public function doesntHave($relation, $boolean = 'and', Closure $callback = null, $morphTypes = null) 
@@ -122,6 +123,7 @@ class Builder extends OriginalBuilder
      * @param  \Closure  $callback
      * @param  string    $operator
      * @param  int       $count
+     * @param  array     $morphTypes
      * @return \Illuminate\Database\Eloquent\Builder|static
      */
     public function whereHas($relation, Closure $callback, $operator = '>=', $count = 1, $morphTypes = null)
@@ -135,6 +137,7 @@ class Builder extends OriginalBuilder
      * @param  string  $relation
      * @param  string  $operator
      * @param  int     $count
+     * @param  array   $morphTypes
      * @return \Illuminate\Database\Eloquent\Builder|static
      */
     public function orHas($relation, $operator = '>=', $count = 1, $morphTypes = null)
@@ -149,6 +152,7 @@ class Builder extends OriginalBuilder
      * @param  \Closure  $callback
      * @param  string    $operator
      * @param  int       $count
+     * @param  array     $morphTypes
      * @return \Illuminate\Database\Eloquent\Builder|static
      */
     public function orWhereHas($relation, Closure $callback, $operator = '>=', $count = 1, $morphTypes = null)
