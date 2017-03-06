@@ -15,9 +15,9 @@ class Builder extends OriginalBuilder
      * @param  string  $morphType
      * @return \Illuminate\Database\Eloquent\Relations\Relation
      */
-    protected function getHasRelationQuery($relationName, $morphType = null)
+    protected function getHasRelationQuery($relation, $morphType = null)
     {
-        return Relation::noConstraints(function() use ($relationName, $morphType)
+        return Relation::noConstraints(function() use ($relation, $morphType)
         {
             $name = $relation;
  			$relation = $this->getModel()->$relation();
