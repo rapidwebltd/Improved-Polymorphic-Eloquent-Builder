@@ -24,14 +24,16 @@ Simply require this package, using Composer, in the root directory of your proje
 composer require rapidwebltd/improved-polymorphic-eloquent-builder
 ```
 
-Then add the following method to any Eloquent models you wish to use this alternative builder. This will usually be any 
-model(s) containing methods which return `morphTo()` relationship(s).
+Then change any Eloquent models using polymorphic relationships to extend the `\RapidWeb\ImprovedPolymorphicEloquentBuilder\Model`
+class. This will usually be any model(s) containing methods which return `morphTo()` relationship(s). An example class is shown below.
 
 ```php
-// Override the default Eloquent Builder for the Variation model improve polymorphic relationships
-public function newEloquentBuilder($query)
+class Variation extends \RapidWeb\ImprovedPolymorphicEloquentBuilder\Model
 {
-  return new \RapidWeb\ImprovedPolymorphicEloquentBuilder\Builder($query);
+  public function model()
+  {
+    return $this->morphTo();
+  }
 }
 ```
 
