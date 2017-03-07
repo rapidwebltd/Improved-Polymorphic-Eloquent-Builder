@@ -30,12 +30,11 @@ Variation::whereHas('model', function($query) use ($brandId) {
 }, '>=', 1, ['bags'])->get();
 ```
 
-A database structure for this example would be similar to the following. The polymorphic relationship fields are highlighted
-in **bold**.
+A database structure for this example would be similar to the following. The polymorphic fields are highlighted in **bold**.
 
 | variations                                  | bags        | sunglasses     |
 |---------------------------------------------|-------------|----------------|
-| id                                          | id          | id             |
+| id                                          | **id**      | **id**             |
 | **model_type** ('bags', 'sunglasses', etc.) | brand_id    | brand_id       |
 | **model_id**                                | material_id | lens_colour_id |
 
