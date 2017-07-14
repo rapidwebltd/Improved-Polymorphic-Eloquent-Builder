@@ -29,10 +29,10 @@ class Builder extends OriginalBuilder
                     throw new Exception('No morph type(s) specified in `whereHas` method call.');
                 }
  
- 				$lookAhead = $relation->getParent()->where($name . '_type', '=', $morphType)->first();
+ 				$lookAhead = $relation->getParent()->where($name . '_type', '=', $morphType)->withTrashed()->first();
 
                 if (!$lookAhead) {
-                    throw new Exception('Invalid morph type ('.$morphType.') specified in `whereHas` method call.');
+                    throw new Exception('Either the morph type `'.$morphType.'` specified in the `whereHas` method call is invalid, or the table related to the '.get_class($relation->getParent()).' Eloquent model does not contain a row where the `'.$name . '_type` field is equal to `'.$morphType.'`.');
                 }
 
  				$relation = $lookAhead->{$name}();
