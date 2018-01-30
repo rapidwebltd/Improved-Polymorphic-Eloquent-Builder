@@ -4,7 +4,7 @@
     "description": "Attempting to use whereHas queries with standard Eloquent polymorphic relationships will fail, due to Eloquent being unable to determine the correct model to retrieve. The 'Improved Polymorphic Eloquent Builder' is a class which extends the Eloquent Builder class that is built in to Laravel 5.1. It enables limited use of the whereHas method to query Eloquent polymorphic relationships.",
     "keywords": ["eloquent", "polymorphic", "polymorphism", "Laravel", "Laravel Eloquent"],
     "homepage": "https://github.com/rapidwebltd/Improved-Polymorphic-Eloquent-Builder",
-    "license": "LGPL3",
+    "license": "LGPL-3.0-only",
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.1.*"
