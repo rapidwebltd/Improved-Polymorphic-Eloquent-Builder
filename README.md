@@ -1,5 +1,7 @@
 # Improved Polymorphic Eloquent Builder
 
+![Packagist](https://img.shields.io/packagist/dt/rapidwebltd/Improved-Polymorphic-Eloquent-Builder.svg)
+
 Attempting to use `whereHas` queries with standard Eloquent polymorphic relationships will fail, due to Eloquent being unable
 to determine the correct model to retrieve. You may receive an error similar to the one below as Eloquent tries to build the 
 query using columns from the model without including its table name.
